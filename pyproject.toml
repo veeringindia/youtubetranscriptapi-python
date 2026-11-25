@@ -3,7 +3,7 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "youtubetranscriptapi"
+name = "youtube-transcript-api-client"
 dynamic = ["version"]
 description = "Official Python client for YouTubeTranscriptAPI: YouTube transcripts, search, and channel and playlist listings, with no IP blocks."
 readme = "README.md"
