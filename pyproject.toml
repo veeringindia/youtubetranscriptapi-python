@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "youtubetranscriptapi"
+dynamic = ["version"]
+description = "Official Python client for YouTubeTranscriptAPI: YouTube transcripts, search, and channel and playlist listings, with no IP blocks."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "YouTubeTranscriptAPI", email = "hello@youtubetranscriptapi.com" }]
+keywords = [
+  "youtube", "youtube transcript", "youtube transcript api", "transcript", "captions",
+  "subtitles", "youtube api", "youtube search", "playlist", "channel",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Multimedia :: Video",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://youtubetranscriptapi.com/?ref=pypi"
+Documentation = "https://youtubetranscriptapi.com/docs/api?ref=pypi"
+"Get an API key" = "https://youtubetranscriptapi.com/signup?ref=pypi"
+Source = "https://github.com/veeringindia/youtubetranscriptapi-python"
+Issues = "https://github.com/veeringindia/youtubetranscriptapi-python/issues"
+
+[project.scripts]
+youtubetranscriptapi = "youtubetranscriptapi.cli:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "youtubetranscriptapi._version.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+youtubetranscriptapi = ["py.typed"]
