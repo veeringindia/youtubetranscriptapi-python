@@ -1,7 +1,7 @@
 # Publishes to PyPI when a GitHub release is published, with PyPI Trusted
 # Publishing: no API token is stored anywhere. One-time setup on pypi.org:
 # Account -> Publishing -> Add a pending publisher, with
-#   project name  youtubetranscriptapi
+#   project name  youtube-transcript-api-client
 #   owner         veeringindia
 #   repository    youtubetranscriptapi-python
 #   workflow      publish.yml
