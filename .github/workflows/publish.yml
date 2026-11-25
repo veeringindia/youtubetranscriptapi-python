@@ -1,20 +1,27 @@
-# Publishes to PyPI when a GitHub release is published, with PyPI Trusted
-# Publishing: no API token is stored anywhere. One-time setup on pypi.org:
+# Publishes to PyPI when a GitHub release is published (or when run by hand
+# from the Actions tab), with PyPI Trusted Publishing: no API token is stored
+# anywhere. One-time setup on pypi.org:
 # Account -> Publishing -> Add a pending publisher, with
 #   project name  youtube-transcript-api-client
 #   owner         veeringindia
 #   repository    youtubetranscriptapi-python
 #   workflow      publish.yml
 #   environment   pypi
+# Bump src/youtubetranscriptapi/_version.py before each release: PyPI refuses
+# to upload a version twice.
 name: Publish
 
 on:
   release:
     types: [published]
+  workflow_dispatch:
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -22,20 +29,4 @@ jobs:
           python-version: "3.12"
       - run: pip install -e . && python -m unittest discover -s tests
       - run: pip install build && python -m build
-      - uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist/
-
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
-    environment: pypi
-    permissions:
-      id-token: write
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist/
       - uses: pypa/gh-action-pypi-publish@release/v1
