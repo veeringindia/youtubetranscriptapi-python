@@ -1,13 +1,13 @@
 # YouTube Transcript API: official Python client
 
-[![PyPI](https://img.shields.io/pypi/v/youtubetranscriptapi)](https://pypi.org/project/youtubetranscriptapi/)
-[![Python](https://img.shields.io/pypi/pyversions/youtubetranscriptapi)](https://pypi.org/project/youtubetranscriptapi/)
+[![PyPI](https://img.shields.io/pypi/v/youtube-transcript-api-client)](https://pypi.org/project/youtube-transcript-api-client/)
+[![Python](https://img.shields.io/pypi/pyversions/youtube-transcript-api-client)](https://pypi.org/project/youtube-transcript-api-client/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](https://github.com/veeringindia/youtubetranscriptapi-python/blob/main/LICENSE)
 
 Get the transcript of any public YouTube video in Python, plus YouTube search and channel and playlist listings, through the hosted [YouTubeTranscriptAPI](https://youtubetranscriptapi.com/?ref=python-sdk). Requests go out from our servers, not yours, so you don't deal with YouTube's IP blocks, `429 Too Many Requests` errors or proxies.
 
 ```bash
-pip install youtubetranscriptapi
+pip install youtube-transcript-api-client
 ```
 
 ```python
@@ -19,7 +19,7 @@ print(yt.transcript_text("https://www.youtube.com/watch?v=dQw4w9WgXcQ"))
 
 You need an API key: [create a free account](https://youtubetranscriptapi.com/signup?ref=python-sdk) for 100 credits, no card required. One transcript costs 1 credit, and failed calls are never charged.
 
-No dependencies, Python 3.9+, fully typed.
+No dependencies, Python 3.9+, fully typed. The package installs as `youtube-transcript-api-client` and imports as `youtubetranscriptapi`.
 
 ## Get a transcript
 
